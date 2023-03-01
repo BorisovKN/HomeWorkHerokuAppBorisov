@@ -11,10 +11,10 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 public class Checkboxes extends BaseTest {
-    private static final String CHECKBOXES = "//a[@href='/checkboxes']";
+    private static final By CHECKBOXES = By.xpath("//a[@href='/checkboxes']");
     @Test
     public void checkboxes(){
-        driver.findElement(By.xpath(String.format(CHECKBOXES))).click();
+        driver.findElement(CHECKBOXES).click();
         List<WebElement> checkBoxes = driver.findElements(By.tagName("input"));
         assertFalse(checkBoxes.get(0).isSelected(), "the 1st checkbox is unchecked");
         checkBoxes.get(0).click();
